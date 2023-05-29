@@ -66,4 +66,3 @@ function outer() {
 - What's a pure function? How would you implement it and why?
 > It always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments. It cannot produce any side effect. It easy to test and debug.
 > Make the candidate explain the difference between mutation and reassignment. (Hint: use `const` with `Array.push` and `let` to explain the difference)
-
