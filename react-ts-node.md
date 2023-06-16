@@ -113,6 +113,10 @@ function outer() {
 
 - Have you worked with advanced web APIs like IndexedDB, WebSockets, WebWorkers, etc?
 
+- What's the `window` object? Why is it important?
+
+> The window object represents the browser's window. It's the global object in the browser. It's used to access the browser's history, location, document, and other properties of the browser window. It's only available client-side.
+
 - What's the difference between local storage and session storage and cookies?
 
 > Local storage and session storage are both mechanisms that allow a browser to store key/value pairs locally within the user's browser. Cookies are small pieces of data that are stored on the client's browser. They are sent to the server with each request. Cookies are used to store user information such as preferences.
