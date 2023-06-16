@@ -18,7 +18,9 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 - What's the DOM?
 
-- How does the DOM differ from the Virtual DOM?
+- How does the DOM differ from the Virtual DOM? Do you know what's the reconciliation process?
+
+- What is the `key` prop? Why is it important when rendering lists of elements? Why is bad to use the index as the key?
 
 - Why React? Do you know other frameworks? How would you compare them?
 
@@ -26,7 +28,7 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 - Do you know memoization? How would you implement it in React?
 
-- What is the difference between `useMemo` and `useCallback`? When and why would you use each one?
+- What is the difference between `useMemo` and `useCallback`? When and why would you use each one? What's React.memo?
 
 - What the is a dependency array in React hooks? Why is it important?
 
@@ -42,7 +44,9 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 - What debugging tools do you use? How would you debug an unknown codebase?
 
 - What's the difference between `==` and `===`? And why is it important in React?
-> `==` compares the values of the variables and `===` compares the type and the value of the variables. In react is important to use __reference equality__ since it's used by the hooks dependencies array to determine if the component should re-render/update or not.
+> `==` compares the values of the variables and `===` compares the type and the value of the variables _and_ memory location. In react is important to use __reference equality__ since it's used by the hooks dependencies array to determine if the component should re-render/update or not.
+
+- How would you change the shape of data that changes frequently inside a component? (Hint: use `useMemo` hook, use `useState` and `useEffect` hooks)
 
 - How do you usually organize your React code? What are the main folders and files you use?
 
@@ -73,8 +77,9 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 - Explain what's the type inference in TypeScript.
 
 ## Javascript
-- What's a closure? How would you use it?
-> Why to use it? To encapsulate data and behavior. To create private variables and methods. When you know the arguments of the outer function ahead of time but you may not know the arguments of the inner function until it is invoked and it's used by several functions with different outer arguments.
+- What's a closure? How would you use it?Why to use it? 
+
+> A closure is a function that returns another function and has access to the scope of the outer function. It's used to encapsulate data and behavior. To create private variables and methods. When you know the arguments of the outer function ahead of time but you may not know the arguments of the inner function until it is invoked and it's used by several functions with different outer arguments. 
 ```javascript
 function outer() {
   let counter = 0;
@@ -96,16 +101,28 @@ function outer() {
 
 - What web APIs do you know? How would you use them?
 
+> Web APIs are APIs that can be accessed using the browser. They are built into the browser and are able to expose data from the browser and surrounding computer environment and do useful complex things with it. They are not part of the JavaScript language itself, rather they are built on top of the core JavaScript language, providing you with extra superpowers to use in your JavaScript code. 
+
+> The most common web APIs are:
+> - DOM API
+> - Fetch API
+> - Web Storage API
+> - Web Audio API
+> - Web Socket API
+> - Web Workers API
+
+- Have you worked with advanced web APIs like IndexedDB, WebSockets, WebWorkers, etc?
+
 - What's the difference between local storage and session storage and cookies?
 
 > Local storage and session storage are both mechanisms that allow a browser to store key/value pairs locally within the user's browser. Cookies are small pieces of data that are stored on the client's browser. They are sent to the server with each request. Cookies are used to store user information such as preferences.
 - When would you use a cookie over local storage?
 
-> Cookies will be used when you want to have user information that can be accessed by the server. Local storage will be used when you want to store user information that can be accessed by the client. Local storage has more capacity than cookies. Cookies can be expired. Local storage is a bit slower than cookies since it lives in the user hard drive while cookies live in the browser memory.
+> Cookies will be used when you want to have user information that can be accessed by the server and can be sent to the server, while local storage can't be directly sent. Local storage will be used when you want to store user information that can be accessed by the client. Local storage has more capacity than cookies. Cookies can be expired. Local storage is a bit slower than cookies since it lives in the user hard drive while cookies live in the browser memory.
 
-- Have you worked with advanced web APIs like IndexedDB, WebSockets, WebWorkers, etc?
+- What does mutation mean? When is okay to mutate? When is not okay to mutate?
 
-- What does mutation mean? 
+> Mutation is when you change the value of a variable after it has been initialized. It's a change in the state of an object or variable. It's a side effect. It's not okay to mutate when you are using a pure function. It's okay to mutate when you are using a closure function.
 
 - What's a pure function? How would you implement it and why?
 > It always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments. It cannot produce any side effect. It easy to test and debug.
