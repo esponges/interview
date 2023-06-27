@@ -52,6 +52,15 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 - Have you heard of SSR? What is it? How would you implement it and why?
 
+- Whats a barrel file? How would you use it?
+> A barrel file is a way to rollup exports from several modules into a single convenient module. It's used to group exports from several files into a single file.
+
+- What's the difference between `export default` and `export`? How would you use them?
+> `export default` is used to export a single class, function, or primitive from a script file. `export` is used to export multiple classes, functions, or primitives from a script file.
+
+- What's tree shaking? How is it related with performance?
+> Tree shaking is a process that removes unused code from the bundle. It's related to performance because it reduces the size of the bundle.
+
 ## Coding
 - What's an abstraction in programming? How would you implement it and why?
 
