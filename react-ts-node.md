@@ -61,6 +61,9 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 - What's tree shaking? How is it related with performance?
 > Tree shaking is a process that removes unused code from the bundle. It's related to performance because it reduces the size of the bundle.
 
+- In a React Component method (eg. handleClick) can you `return` a `setState`? Why?
+> No, `setState` cannot be returned from a handler. It must be invoked directly or React won't schedule a re-render.
+
 ## Coding
 - What's an abstraction in programming? How would you implement it and why?
 
