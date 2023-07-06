@@ -37,6 +37,9 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 - Do you know what is a Higher Order Component (HOC)? How would you implement it? Why would you use HOCs?
 > A HOComponent is a function that takes a component and returns a new enhanced component. It's used to share common functionality between components without repeating code.
 
+- Its considered a bad practice to change a DOM element directly. How would you do it in React?
+> Using refs (or getElementyBy) to directly manipulate the DOM is generally not recommended in React, as it can lead to hard-to-debug issues and make the code harder to maintain. Instead, it's usually better to use state and props to manage the content of your components.
+
 
 ### Advanced
 - To assess the performance of a React application: What would you do? What tools would you use? What metrics would you look at?
