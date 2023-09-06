@@ -79,10 +79,10 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 - Have you heard about the SOLID principles? What are they? Can they be applied to React? How?
 
 > Single Responsibility Principle (SRP): A component should have one and only one reason to change, meaning that a component should have only one job. Eg. a component should only render a list of items, not fetch the data and render the list.
-Open/Closed Principle (OCP). A component should be open for extension but closed for modification. Eg. a component should be able to be extended to render a list of items in a table or in a list. Splitting the code in small components (atomic design) will help to achieve this.
-Liskov Substitution Principle (LSP). A component should be replaceable with its subtypes without altering the correctness of the program. Eg. a component should be able to be replaced by a component that renders a list of items in a table or in a list.
-Interface Segregation Principle (ISP). A component should not be forced to implement methods that it does not use. Eg. a component should not be forced to implement a method to fetch data if it's not going to use it or receive objects with unnecessary properties.
-Dependency Inversion Principle (DIP). A component should not depend on another component. It should depend on abstractions. Eg. a component should not depend on a component that fetches data. It should depend on an abstraction that fetches data, for example a custom hook, or a library such as React Query for handling data fetching in an abstract way.
+> Open/Closed Principle (OCP). A component should be open for extension but closed for modification. Eg. a component should be able to be extended to render a list of items in a table or in a list. Splitting the code in small components (atomic design) will help to achieve this.
+> Liskov Substitution Principle (LSP). A component should be replaceable with its subtypes without altering the correctness of the program. Eg. a component should be able to be replaced by a component that renders a list of items in a table or in a list.
+> Interface Segregation Principle (ISP). A component should not be forced to implement methods that it does not use. Eg. a component should not be forced to implement a method to fetch data if it's not going to use it or receive objects with unnecessary properties.
+> Dependency Inversion Principle (DIP). A component should not depend on another component. It should depend on abstractions. Eg. a component should not depend on a component that fetches data. It should depend on an abstraction that fetches data, for example a custom hook, or a library such as React Query for handling data fetching in an abstract way.
 
 A great article (here)[https://www.everydayreact.com/articles/solid-principles-in-react]
 
