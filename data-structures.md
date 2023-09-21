@@ -52,3 +52,45 @@ function traverseList(head) {
   }
 }
 ```
+
+### Stack
+A stack is a data structure that stores elements in a LIFO (Last In First Out) order. The last element added to the stack is the first one to be removed. The operations of adding and removing elements from a stack are called push and pop respectively.
+
+Stacks are used in many algorithms. For example, they are used in the implementation of the call stack in programming languages. They are also used in the implementation of undo/redo functionality in text editors. 
+
+They are also useful in the implementation of backtracking (recursion) algorithms because they can be used to keep track of the current state of the algorithm. When the algorithm needs to backtrack, it can simply pop the current state off the stack and return to the previous state.
+
+```javascript
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.items.length === 0) {
+      return "Underflow";
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  printStack() {
+    let str = "";
+    for (let i = 0; i < this.items.length; i++) {
+      str += this.items[i] + " ";
+    }
+    return str;
+  }
+}
+```
