@@ -21,3 +21,34 @@ console.log(arr);
 
 // If no other objects are using that space, it will eventually be reclaimed by the garbage collector.
 ```
+
+## Linked Lists
+Linked lists are a collection of elements of the same type. They are stored in non-contiguous memory locations. Each element of the linked list is called a node. Each node contains the value of the element and a pointer to the next node in the list. The last node of the list points to null.
+
+When we don't know the size of the list in advance they are a good option. They are also a good option when we need to access the elements of the list in a sequential order. The time complexity of accessing an element in a linked list is O(n). However, if we want to access a random element in the list, LLs are not a good option since we have to traverse the list from the beginning to the element we want to access.
+
+- Node
+
+```javascript
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+```
+
+- Traverse lists
+
+```javascript
+function traverseList(head) {
+  // where head is the first node of the list
+  // current is a pointer to the current node
+  // if we want to access to a node we must "move" the pointer to that node and change its value
+  let current = head;
+  while (current !== null) {
+    console.log(current.value);
+    current = current.next;
+  }
+}
+```
