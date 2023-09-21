@@ -145,3 +145,76 @@ class Queue {
   }
 }
 ```
+
+## Hash Tables
+In Javascript, objects are hash tables. A hash table is a data structure that maps keys to values. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+Hash tables are used in many algorithms. For example, they are used in the implementation of associative arrays, database indexing, caches, etc.
+
+Disadvantages of hash tables:
+- They are not ordered. The order of the elements is not guaranteed.
+- They are not dynamic. We have to specify the maximum number of elements that the hash table can hold when we create it.
+
+## Trees
+A tree is a data structure that stores elements in a hierarchical way. Each element in the tree is called a node. The top node of the tree is called the root node. The nodes that are directly under a node are called its children. The node that is directly above a node is called its parent. The nodes that have no children are called leaf nodes.
+
+Trees are used in many algorithms. For example, they are used in the implementation of binary search trees, heaps, etc.
+
+Some examples of how binary trees are used in real-world applications:
+
+- File systems use binary trees to store files and directories.
+- Databases use binary trees to index data.
+- Search engines use binary trees to index web pages.
+- Compilers use binary trees to parse code.
+- Computer graphics use binary trees to represent 3D models
+
+Disadvantages of trees:
+- They are not random access. We can only access the root node of the tree.
+
+### Binary Search Tree
+A binary search tree is a binary tree in which the value of each node is greater than or equal to the values in the nodes of its left subtree and less than or equal to the values in the nodes of its right subtree.
+
+Binary search trees are used in many algorithms. For example, they are used in the implementation of associative arrays, database indexing, caches, etc.
+
+```javascript
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// creating a BST
+const values = [15, 25, 10, 7, 22, 17, 13, 5, 9, 27];
+const root = new Node(values[0]);
+
+for (let i = 1; i < values.length; i++) {
+  // always start at the root
+  let current = root;
+  while (true) {
+    // find the side where the new node should be inserted
+    // smaller values go to the left
+    if (values[i] < current.value) {
+      if (current.left === null) {
+        current.left = new Node(values[i]);
+        break;
+      } else {
+        current = current.left;
+      }
+    // larger values go to the right
+    } else if (values[i] > current.value) {
+      if (current.right === null) {
+        current.right = new Node(values[i]);
+        break;
+      } else {
+        current = current.right;
+      }
+    } else {
+      break;
+    }
+  }
+}
+```
+
+
