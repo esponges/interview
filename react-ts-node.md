@@ -88,6 +88,9 @@ A great article (here)[https://www.everydayreact.com/articles/solid-principles-i
 
 - What's an MVC? Can it be applied to React? How?
 
+- What's data serialization? Why is it important?
+> When serializing data you are converting data into a format that can be stored or transmitted and reconstructed later even by different applications. The most common types of serialization are JSON and XML. Serialization could lead to performance and security issues if not done properly.
+
 ## TypeScript
 - What is TypeScript? Why would you use it?
 
