@@ -1,5 +1,17 @@
 # Data Structures
 
+## Space and Time Complexity
+- What are the principal time complexities?
+1. Constant time (O(1)): The algorithm takes the same amount of time to run, regardless of the size of the input. For example, an algorithm to return the length of a list always takes a constant amount of time, regardless of the number of elements in the list.
+2. Linear time (O(n)): The algorithm takes time proportional to the size of the input. For example, an algorithm to **search** for an element in a list takes linear time, because it has to examine each element in the list.
+3. Quadratic time (O(n^2)): The algorithm takes time proportional to the square of the size of the input. For example, an algorithm to **sort** a list of numbers takes quadratic time, because it has to compare each element in the list with every other element.
+4. Exponential time (O(2^n)): The algorithm takes time proportional to the power of 2 of the size of the input. For example, an algorithm to find the longest common subsequence of two strings takes exponential time, because it has to _consider all possible combinations_ of the two strings.
+
+- And the principal space complexities?
+1. Constant space (O(1)): The algorithm uses a **fixed amount of memory**, regardless of the size of the input. For example, an algorithm to return the length of a list always uses a constant amount of memory, because it only needs to store a few variables.
+2. Linear space (O(n)): The algorithm uses **memory proportional to the size of the input**. For example, an algorithm to **sort** a list of numbers uses linear space, because it needs to store a copy of the list.
+3. Quadratic space (O(n^2)): The algorithm uses **memory proportional to the square of the size of the input**. For example, an algorithm to find the longest common subsequence of two strings uses quadratic space, because it needs to store a table of **all possible combinations** of the two strings.
+
 ## Arrays
 Arrays are a collection of elements of the same type. They are stored in contiguous memory locations. The elements of an array can be accessed using an index. The index of the first element is 0 and the index of the last element is the length of the array minus 1.
 
@@ -216,5 +228,3 @@ for (let i = 1; i < values.length; i++) {
   }
 }
 ```
-
-
