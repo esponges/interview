@@ -60,6 +60,10 @@ Stacks are used in many algorithms. For example, they are used in the implementa
 
 They are also useful in the implementation of backtracking (recursion) algorithms because they can be used to keep track of the current state of the algorithm. When the algorithm needs to backtrack, it can simply pop the current state off the stack and return to the previous state.
 
+Disadvantages of stacks:
+- They are not random access. We can only access the top element of the stack.
+- They are not dynamic. We have to specify the maximum number of elements that the stack can hold when we create it.
+
 ```javascript
 class Stack {
   constructor() {
@@ -86,6 +90,53 @@ class Stack {
   }
 
   printStack() {
+    let str = "";
+    for (let i = 0; i < this.items.length; i++) {
+      str += this.items[i] + " ";
+    }
+    return str;
+  }
+}
+```
+
+## Queue
+A queue is a data structure that stores elements in a FIFO (First In First Out) order. The first element added to the queue is the first one to be removed. The operations of adding and removing elements from a queue are called enqueue and dequeue respectively.
+
+Queues are used in many algorithms. For example, they are used in the implementation of breadth-first search (BFS) algorithm. They are also used in the implementation of the message queue in operating systems.
+
+Disadvantages of queues:
+- They are not random access. We can only access the first element of the queue.
+- They are not dynamic. We have to specify the maximum number of elements that the queue can hold when we create it.
+
+```javascript
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  dequeue() {
+    if (this.items.length === 0) {
+      return "Underflow";
+    }
+    return this.items.shift();
+  }
+
+  front() {
+    if (this.items.length === 0) {
+      return "No elements in Queue";
+    }
+    return this.items[0];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  printQueue() {
     let str = "";
     for (let i = 0; i < this.items.length; i++) {
       str += this.items[i] + " ";
