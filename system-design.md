@@ -146,7 +146,16 @@ Use cases (same as REST):
 - Mobile applications
 
 ### RPC
-RPC stands for Remote Procedure Call. It is a protocol that allows a computer program to execute a subroutine or procedure on another computer without the programmer having to explicitly code the details for this remote interaction. RPC is a request-response protocol. A client sends a request to a server, and the server responds to the request.
+RPC stands for Remote Procedure Call. It is a protocol that allows a computer program to execute a subroutine or procedure on another computer without the programmer having to explicitly code the details for this remote interaction. RPC is a request-response protocol. A client sends a request to a server, and the server responds to the request. With RPC you call a function on a remote server as if it were a local function.
+
+```typescript
+// HTTP/REST
+const res = await fetch('/api/users/1');
+const user = await res.json();
+
+// RPC
+const user = await api.users.getById({ id: 1 });
+```
 
 Advantages:
 - More complex operations
