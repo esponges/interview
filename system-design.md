@@ -9,6 +9,22 @@ Non-functional requirements describe how a system should perform. They define th
 ## Scalability
 Scalability refers to the capability of a system to handle a growing amount of work, or its potential to perform more total work in the same elapsed time when processing power is expanded to accommodate growth. A system is said to be scalable if it can increase its workload and throughput when additional resources are added.
 
+### Availability
+Availability is the percentage of time that a system is operational and accessible to users. It is typically measured as a percentage of uptime over a given period of time. For example, a system that is available 99.9% of the time would be considered highly available.
+
+### Consistency
+Consistency refers to the state of a system's data. A system is considered consistent if all users see the same data at the same time. For example, if a user updates a record, all subsequent requests should see the updated record.
+
+### Partition Tolerance
+Partition tolerance refers to a system's ability to continue to operate despite partial system failure or loss of network connectivity. A system that is partition tolerant can sustain any amount of network failure that doesn't result in a failure of the entire network.
+
+### CAP Theorem
+The CAP theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
+
+- Consistency: Every read receives the most recent write or an error.
+- Availability: Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
+- Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
+
 ## Database Scaling
 ### Vertical Scaling
 The vertical scaling approach, sometimes referred to as "scaling up," focuses on adding more resources or more processing power to a single machine. These additions may include CPU and RAM resources upgrades which will increase the processing speed of a single server or increase the storage capacity of a single machine to address increasing data requirements.
@@ -217,5 +233,28 @@ For static content such as media, CSS, and JavaScript files:
 For dynamic content like db results, rendered pages, etc:
 - Redis: Redis is an in-memory data structure store that supports key-value pairs, strings, lists, sets, sorted sets,hashes, geospatial indexes, hyperloglog, bitmaps, streams, and pub/sub.
 - Memcached: Memcached is a distributed in-memory key-value store that is designed for speed and scalability.
+
+## Monitoring
+Monitoring is the process of collecting and analyzing data about a system to determine its health and performance. It is used to identify bottlenecks, detect failures, and improve the overall performance of a system.
+
+Client and servers can be monitored using a variety of tools, including:
+- Prometheus
+- Grafana
+- Datadog
+
+## Load Balancing
+Load balancing is the process of distributing workloads across multiple servers. It is used to improve the performance and reliability of a system by distributing the workload across multiple servers.
+
+Load balancers can be implemented using a variety of techniques: Round Robin, Least Connections, Least Response Time, etc.
+
+### Round Robin
+Round Robin is a load balancing technique that distributes requests evenly across a set of servers. It is often used to distribute requests across multiple servers in a cluster. This technique is simple and easy to implement, but it _does not take into account the current load on each server_.
+
+### Weighted Round Robin
+Weighted Round Robin is a load balancing technique that distributes requests across a set of servers based on their weight. This technique is similar to Round Robin, but it takes into account the current load on each server. This technique is more complex than Round Robin, but it can be more effective at distributing requests evenly across a set of servers and it's advisable to use it _when the servers have different capacities_.
+
+### Least Connections
+Least Connections is a load balancing technique that distributes requests to the server with the least number of active connections. This technique is more complex than Round Robin, but it can be more effective at distributing requests evenly across a set of servers.
+
 
 
