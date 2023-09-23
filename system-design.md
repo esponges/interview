@@ -146,7 +146,9 @@ Use cases (same as REST):
 - Mobile applications
 
 ### RPC
-RPC stands for Remote Procedure Call. It is a protocol that allows a computer program to execute a subroutine or procedure on another computer without the programmer having to explicitly code the details for this remote interaction. RPC is a request-response protocol. A client sends a request to a server, and the server responds to the request. With RPC you call a function on a remote server as if it were a local function.
+RPC stands for Remote Procedure Call. It is a protocol that allows a computer program to execute a subroutine or procedure on another computer without the programmer having to explicitly code the details for this remote interaction. RPC is a request-response protocol. 
+
+A client sends a request to a server, and the server responds to the request. With RPC you call a function on a remote server as if it were a local function.
 
 ```typescript
 // HTTP/REST
@@ -166,4 +168,54 @@ Advantages:
 Disadvantages:
 - Complexity
 - Not very flexible
+
+## Caching
+Caching is a technique that stores copies of frequently accessed data in a location that is closer to the user or application. This can improve performance and scalability by reducing the number of requests that need to be made to the underlying database or other data source.
+
+There are two main types of caching:
+
+- In-memory caching: This type of caching stores data in memory, which is much faster than typical disk storage.
+- Distributed caching: This type of caching stores data across multiple servers, which can improve scalability and reliability.
+
+### In-memory Caching
+In-memory caching stores data in memory, which is much faster than typical disk storage. This type of caching is often used to cache data that is frequently accessed by an application, such as user profiles or product information.
+
+Advantages:
+- Fast
+- Easy to implement
+- Easy to scale
+
+Disadvantages:
+- Data loss
+- Limited by the amount of memory available
+- Data duplication
+
+### Distributed Caching
+This type of caching stores data across multiple servers, which can improve scalability and reliability. Distributed caches are typically used to cache large amounts of data that need to be accessed by multiple applications or servers.
+
+Advantages:
+- Scalability
+- Can store large amounts of data
+
+Disadvantages:
+- Complex to implement
+- Slower than in-memory caching
+
+When designing a system that uses caching, it is important to consider the following factors:
+
+- What type of data will be cached?
+> e.g. static content, dynamic content, etc.
+- How often will the data be updated?
+- How much data needs to be cached?
+- How many applications or servers will need to access the cache?
+- What is the budget for implementing and managing the cache?
+
+### Popular Caching Solutions
+For static content such as media, CSS, and JavaScript files:
+- CDNs: CDN stands for content delivery network. CDNs are a network of servers that are distributed around the world. They are used to deliver content, such as web pages, images, and videos, to users with the lowest possible latency.
+
+For dynamic content like db results, rendered pages, etc:
+- Redis: Redis is an in-memory data structure store that supports key-value pairs, strings, lists, sets, sorted sets,hashes, geospatial indexes, hyperloglog, bitmaps, streams, and pub/sub.
+- Memcached: Memcached is a distributed in-memory key-value store that is designed for speed and scalability.
+
 
