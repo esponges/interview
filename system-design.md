@@ -25,84 +25,10 @@ The CAP theorem states that it is impossible for a distributed data store to sim
 - Availability: Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
 - Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
 
-## Database Scaling
-### Vertical Scaling
-The vertical scaling approach, sometimes referred to as "scaling up," focuses on adding more resources or more processing power to a single machine. These additions may include CPU and RAM resources upgrades which will increase the processing speed of a single server or increase the storage capacity of a single machine to address increasing data requirements.
-
-Advantages:
-- Less complex
-- Less expensive
-- Easier to maintain
-
-Disadvantages:
-- Limited by the capacity of a single machine
-- Downtime during upgrades
-- Difficult to scale dynamically
-
-Suitable for:
-- Small applications
-- Applications with a small user base
-- Applications with a small data set
-- MySQL, Amazon RDS, PostgreSQL, Oracle, SQL Server (most of the relational databases)
-
-### Horizontal Scaling
-The horizontal scaling approach, sometimes referred to as "scaling out," focuses on adding more machines to the pool of resources that are available to the application. This approach is often used to address increasing traffic to an application by sharing the processing and I/O load across multiple machines.
-
-Advantages:
-- No downtime during upgrades
-- Easier to scale dynamically
-- No limit to the number of machines that can be added
-
-Disadvantages:
-- More complex
-- More expensive
-- More difficult to maintain
-
-Suitable for:
-- Large applications
-- MongoDB, Cassandra, HBase
-
-### Sharding
-Sharding is a type of horizontal scaling that involves breaking up the data set and distributing it across multiple machines. This approach is often used to address increasing data requirements by sharing the data set across multiple machines.
-
-Advantages:
-- Improves system tolerance and availability since it has a single point of failure
-
-Disadvantages:
-- More complex to distribute evenly (do not cause imbalances) across machines
-- More expensive
-- Difficult to roll back to unsharded architecture
-
-Suitable for:
-- Large applications with a large data set
-- High traffic applications that should handle lot of concurrent requests
-
-### Replication
-Replication is a type of horizontal scaling that involves creating multiple copies of the data set and distributing the copies across multiple machines. This approach is often used to address increasing traffic to an application by sharing the processing and I/O load across multiple machines.
-
-Advantages:
-- System availability and fault tolerance is greatly improved since there is no single point of failure
-- More read operations can be performed since the data set is distributed across multiple machines which decreases the load on a single machine
-
-Disadvantages:
-- Risk of duplication -inconsistency- of data
-- More complex to distribute evenly across machines
-- More expensive
-
-Suitable for:
-- Read heavy applications that require high availability and performance
-- Applications that need to scale dynamically
-- Applications that need quick data recovery
-
-### ACID
-ACID stands for Atomicity, Consistency, Isolation, and Durability. These properties ensure that the data in a database is always in a consistent state, even if there are failures or concurrent transactions.
-
-- Atomicity: All of the operations in a transaction must either succeed or fail together. There can be no partial failures.
-- Consistency: Each transaction must leave the database in a consistent state. This means that all of the constraints on the data must be satisfied.
-- Isolation: Transactions must be isolated from each other. This means that one transaction cannot see the uncommitted changes of another transaction.
-- Durability: Once a transaction is committed, its changes must be durable. This means that the changes cannot be lost, even if there is a failure.
-
-Depending on the applications needs, the ACID properties can be relaxed to improve performance. For example, a database may choose to relax the isolation property to improve concurrency, or it can tolerate some data loss to improve availability.
+## API
+An API (application promgramming interface) is a contract that defines how two applications interact with each other. APIs are typically used to allow applications to communicate with each other by sending and receiving data.
+### Gateway
+An API gateway is a server that acts as a single entry point for all requests from clients to the backend services. It provides a centralized place to define, publish, maintain, monitor, and secure APIs. It also provides additional cross-cutting features such as authentication, SSL termination, and rate limiting.
 
 ## API Design
 ### REST
@@ -184,6 +110,134 @@ Advantages:
 Disadvantages:
 - Complexity
 - Not very flexible
+
+## Databases
+### Relational Databases
+A relational database is a type of database that stores and provides access to data points that are related to one another. Relational databases are based on the relational model, which organizes data into one or more tables (or "relations") of columns and rows, with a unique key identifying each row. Rows are also called records or tuples.
+
+Advantages:
+- Data integrity
+- Data consistency
+- Data security
+- Data independence
+
+Disadvantages:
+- Difficult to scale
+- Difficult to change
+- Difficult to maintain
+
+Examples:
+- MySQL
+- PostgreSQL
+- Oracle
+- SQL Server
+
+Use cases:
+- Applications that require multi-row transactions
+- Applications that require high security
+- Applications that require complex queries
+
+### Non-relational Databases
+A non-relational database is a type of database that stores and provides access to data points that are unrelated to one another. Non-relational databases are based on the non-relational model, which organizes data into one or more collections of documents, with each document containing one or more fields. Documents can be thought of as the equivalent of rows in a relational database, and fields as the equivalent of columns.
+
+Advantages:
+- Scalability
+- Flexibility
+- Performance
+
+Disadvantages:
+- Data integrity
+- Data consistency
+- Data security
+
+Examples:
+- MongoDB
+- Cassandra
+- HBase - ideal for chat applications due to its high availability and low latency
+
+Use cases:
+- Applications that require high scalability
+- Applications that require high performance
+- Applications that require high availability
+
+## Database Scaling
+### Vertical Scaling
+The vertical scaling approach, sometimes referred to as "scaling up," focuses on adding more resources or more processing power to a single machine. These additions may include CPU and RAM resources upgrades which will increase the processing speed of a single server or increase the storage capacity of a single machine to address increasing data requirements.
+
+Advantages:
+- Less complex
+- Less expensive
+- Easier to maintain
+
+Disadvantages:
+- Limited by the capacity of a single machine
+- Downtime during upgrades
+- Difficult to scale dynamically
+
+Suitable for:
+- Small applications
+- Applications with a small user base
+- Applications with a small data set
+- MySQL, Amazon RDS, PostgreSQL, Oracle, SQL Server (most of the relational databases)
+
+### Horizontal Scaling
+The horizontal scaling approach, sometimes referred to as "scaling out," focuses on adding more machines to the pool of resources that are available to the application. This approach is often used to address increasing traffic to an application by sharing the processing and I/O load across multiple machines.
+
+Advantages:
+- No downtime during upgrades
+- Easier to scale dynamically
+- No limit to the number of machines that can be added
+
+Disadvantages:
+- More complex
+- More expensive
+- More difficult to maintain
+
+Suitable for:
+- Large applications
+- MongoDB, Cassandra, HBase
+
+### Sharding
+Sharding is a type of horizontal scaling that involves breaking up the data set and distributing it across multiple machines. This approach is often used to address increasing data requirements by sharing the data set across multiple machines.
+
+Advantages:
+- Improves system tolerance and availability since it has a single point of failure
+
+Disadvantages:
+- More complex to distribute evenly (do not cause imbalances) across machines
+- More expensive
+- Difficult to roll back to unsharded architecture
+
+Suitable for:
+- Large applications with a large data set
+- High traffic applications that should handle lot of concurrent requests
+
+### Replication
+Replication is a type of horizontal scaling that involves creating multiple copies of the data set and distributing the copies across multiple machines. This approach is often used to address increasing traffic to an application by sharing the processing and I/O load across multiple machines.
+
+Advantages:
+- System availability and fault tolerance is greatly improved since there is no single point of failure
+- More read operations can be performed since the data set is distributed across multiple machines which decreases the load on a single machine
+
+Disadvantages:
+- Risk of duplication -inconsistency- of data
+- More complex to distribute evenly across machines
+- More expensive
+
+Suitable for:
+- Read heavy applications that require high availability and performance
+- Applications that need to scale dynamically
+- Applications that need quick data recovery
+
+### ACID
+ACID stands for Atomicity, Consistency, Isolation, and Durability. These properties ensure that the data in a database is always in a consistent state, even if there are failures or concurrent transactions.
+
+- Atomicity: All of the operations in a transaction must either succeed or fail together. There can be no partial failures.
+- Consistency: Each transaction must leave the database in a consistent state. This means that all of the constraints on the data must be satisfied.
+- Isolation: Transactions must be isolated from each other. This means that one transaction cannot see the uncommitted changes of another transaction.
+- Durability: Once a transaction is committed, its changes must be durable. This means that the changes cannot be lost, even if there is a failure.
+
+Depending on the applications needs, the ACID properties can be relaxed to improve performance. For example, a database may choose to relax the isolation property to improve concurrency, or it can tolerate some data loss to improve availability.
 
 ## Caching
 Caching is a technique that stores copies of frequently accessed data in a location that is closer to the user or application. This can improve performance and scalability by reducing the number of requests that need to be made to the underlying database or other data source.
