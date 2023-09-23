@@ -1,3 +1,11 @@
+## System Requirements
+
+### Functional Requirements
+Functional requirements describe what a system must do, or what its features and functions are. They define the system's behavior and how it should interact with users and other systems. Functional requirements are typically specified by business stakeholders and users.
+
+### Non-functional Requirements
+Non-functional requirements describe how a system should perform. They define the system's quality attributes, such as performance, security, reliability, usability, and maintainability. Non-functional requirements are typically specified by technical stakeholders, such as software developers and architects.
+
 ## Scalability
 Scalability refers to the capability of a system to handle a growing amount of work, or its potential to perform more total work in the same elapsed time when processing power is expanded to accommodate growth. A system is said to be scalable if it can increase its workload and throughput when additional resources are added.
 
@@ -79,3 +87,74 @@ ACID stands for Atomicity, Consistency, Isolation, and Durability. These propert
 - Durability: Once a transaction is committed, its changes must be durable. This means that the changes cannot be lost, even if there is a failure.
 
 Depending on the applications needs, the ACID properties can be relaxed to improve performance. For example, a database may choose to relax the isolation property to improve concurrency, or it can tolerate some data loss to improve availability.
+
+## API Design
+### REST
+REST stands for Representational State Transfer. It is an architectural style that defines a set of constraints to be used for creating web services. RESTful web services allow the requesting systems to access and manipulate textual representations of web resources by using a uniform and predefined set of stateless operations.
+
+RESTful web services are stateless. This means that each request contains all of the information necessary for the server to understand and process it. The server cannot rely on any information that is stored on the client. This constraint allows RESTful applications to be highly scalable since they can be deployed on multiple servers and load balanced.
+
+Advantages:
+- Scalability
+- Flexibility
+- Simplicity
+
+Disadvantages:
+- Lack of standardization
+- Security concerns
+
+Use cases:
+- Public APIs
+- Web applications
+- Mobile applications
+
+### SOAP
+SOAP stands for Simple Object Access Protocol. It is a messaging protocol that defines a set of rules for structuring messages that can be used for exchanging information between systems. SOAP messages are typically sent using HTTP (Hypertext Transfer Protocol) but can also be sent using SMTP (Simple Mail Transfer Protocol) or other protocols.
+
+SOAP messages are XML documents that contain a set of rules for structuring messages. These rules define the structure of the message, the encoding scheme, and the conventions for representing remote procedure calls and responses.
+
+Advantages:
+- Standardization
+- Security
+- Extensibility
+
+Disadvantages:
+- Complexity
+- Performance - slower than REST
+- Lack of flexibility
+
+Use cases:
+- Enterprise applications
+- Applications that require high security
+
+### GraphQL
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+Advantages:
+- Flexibility
+- Performance
+- Strongly typed
+
+Disadvantages:
+- Caching
+- Complexity
+- Lack of standardization
+
+Use cases (same as REST):
+- Public APIs
+- Web applications
+- Mobile applications
+
+### RPC
+RPC stands for Remote Procedure Call. It is a protocol that allows a computer program to execute a subroutine or procedure on another computer without the programmer having to explicitly code the details for this remote interaction. RPC is a request-response protocol. A client sends a request to a server, and the server responds to the request.
+
+Advantages:
+- More complex operations
+- No need for data transformation (JSON, XML, etc.)
+- Very fast
+- Strongly typed
+
+Disadvantages:
+- Complexity
+- Not very flexible
+
