@@ -86,17 +86,19 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 - Have you heard about the __SOLID principles__? What are they? Can they be applied to React? How?
 
-1. Single Responsibility Principle (SRP): A component should have one and only one reason to change, meaning that a component should have only one job. Eg. a component should only render a list of items, not fetch the data and render the list.
-2. Open/Closed Principle (OCP). A component should be open for extension but closed for modification. Eg. a component should be able to be extended to render a list of items in a table or in a list. Splitting the code in small components (atomic design) will help to achieve this.
-3. Liskov Substitution Principle (LSP). A component should be replaceable with its subtypes without altering the correctness of the program. Eg. a component should be able to be replaced by a component that renders a list of items in a table or in a list.
-4. Interface Segregation Principle (ISP). A component should not be forced to implement methods that it does not use. Eg. a component should not be forced to implement a method to fetch data if it's not going to use it or receive objects with unnecessary properties.
-5. Dependency Inversion Principle (DIP). A component should not depend on another component. It should depend on abstractions. Eg. a component should not depend on a component that fetches data. It should depend on an abstraction that fetches data, for example a custom hook, or a library such as React Query for handling data fetching in an abstract way.
+1. __Single Responsibility Principle__ (SRP): A component should have one and only one reason to change, meaning that a component should have only one job. Eg. a component should only render a list of items, not fetch the data and render the list.
+2. __Open/Closed Principle__ (OCP). A component should be open for extension but closed for modification. Eg. a component should be able to be extended to render a list of items in a table or in a list. Splitting the code in small components (atomic design) will help to achieve this.
+3. __Liskov Substitution Principle__ (LSP). A component should be replaceable with its subtypes without altering the correctness of the program. Eg. a component should be able to be replaced by a component that renders a list of items in a table or in a list.
+4. __Interface Segregation Principle__ (ISP). A component should not be forced to implement methods that it does not use. Eg. a component should not be forced to implement a method to fetch data if it's not going to use it or receive objects with unnecessary properties. In React, a component could be receiving props that doesn't require, for example in an object, where we'd just needs partial elements of it.
+5. __Dependency Inversion Principle__ (DIP). A component should not depend on another component. It should depend on abstractions. Eg. a component should not depend on a component that fetches data. It should depend on an abstraction that fetches data, for example a custom hook, or a library such as React Query for handling data fetching in an abstract way.
 
 A great article (here)[https://www.everydayreact.com/articles/solid-principles-in-react]
 
 - What's an __MVC__? Can it be applied to React? How?
 
-> MVC stands for Model View Controller. It's a software design pattern that separates the data from the presentation. It can be applied to React by using Redux. Redux is a state management library that follows the MVC pattern. The store is the model, the view is the component, and the controller is the reducer.
+> MVC stands for Model View Controller. It's a software design pattern that separates the data from the presentation. It can be applied to React by using Redux. Redux is a state management library that follows the MVC pattern. 
+
+The user _acts_ with using an action creator. The action creator _dispatches_ an action. The action _updates_ the store with a reducer. The store _notifies_ the view. The view _re-renders_.
 
 - What's __data serialization__? Why is it important?
 
@@ -175,4 +177,26 @@ function outer() {
 > It always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments. It cannot produce any side effect. It easy to test and debug.
 > Make the candidate explain the difference between mutation and reassignment. (Hint: use `const` with `Array.push` and `let` to explain the difference)
 
-- Why do we say that Javascript is a __single-threaded__ language? How it relates to the event loop?º
+- Why do we say that Javascript is a __single-threaded__ language? How it relates to the event loop?
+
+## Node.js
+- What is __Node.js__? Why would you use it? What's the difference between Node.js and Express.js?
+> Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It's used to build fast and scalable network applications. It's used to build back-end services like APIs, web servers, and microservices while Express.js is a framework that runs on top of Node.js. It's used to build web applications and APIs.
+
+- What's the difference between __`require` and `import`__? How would you use them?
+> `require` is used to import CommonJS modules while `import` is used to import ES6 modules. `require` is a function while `import` is a statement. `require` is synchronous while `import` is asynchronous. `require` is used to import a module while `import` is used to import a module or a variable.
+
+- In Express.js, what's the difference between __`app.use` and `app.get`__? How would you use them?
+> `app.use` is used to mount middleware while `app.get` is used to handle GET requests. `app.use` is used to mount middleware at a path while `app.get` is used to handle GET requests at a path.
+
+- What's a __middleware__? How would you use it? Why would you use it?
+> Middleware is a function that has access to the request and response objects. It can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware function in the stack.
+
+- What's a __handler__ function? How would you use it? Why would you use it?
+> A handler function is a function that handles a request. It usually doesn't have business logic.
+
+- What's a __service__ function? How would you use it? Why would you use it?
+> A service function is a function that its usually used for business logic. It's used to separate the business logic from the controller. It makes the controller more readable and easier to test. It can be used to request data from an API, to make calculations, etc.
+
+- What do you understand for __scaffolding__? How would you'd scaffold an Express.js application?
+> Scaffolding is the process of generating a skeleton of an application. It's used to generate the basic structure of an application.
