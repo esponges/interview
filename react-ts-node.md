@@ -200,3 +200,6 @@ function outer() {
 
 - What do you understand for __scaffolding__? How would you'd scaffold an Express.js application?
 > Scaffolding is the process of generating a skeleton of an application. It's used to generate the basic structure of an application.
+
+- What's an __idempotent operation__? How would you use it? Why would you use it?
+> An idempotent operation is an operation that can be applied multiple times without changing the result beyond the initial application. E.g. you wanto to make a payment. You send the request to the server. The server processes the request and sends a response. If you send the same request again, the server will process the request and send the same response. The result is the same. This way if the client doesn't receive a response from the server it can retry the request without worrying about duplicate payments.
