@@ -53,7 +53,7 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 > `==` compares the values of the variables and `===` compares the type and the value of the variables _and_ memory location. In react is important to use __reference equality__ since it's used by the hooks dependencies array to determine if the component should re-render/update or not.
 
-- How do you usually__organize your React code__? What are the main folders and files you use?
+- How do you usually __organize your React code__? What are the main folders and files you use?
 
 - Have you heard of __SSR__? What is it? How would you implement it and why?
 
@@ -61,7 +61,7 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 > A barrel file is a way to rollup exports from several modules into a single convenient module. It's used to group exports from several files into a single file.
 
-- What's the difference between __`export default` and `export`__? How would you use them?
+- What's the difference between `export default` and `export`? How would you use them?
 
 > `export default` is used to export a single class, function, or primitive from a script file. `export` is used to export multiple classes, functions, or primitives from a script file.
 
@@ -69,9 +69,13 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 > Tree shaking is a process that removes unused code from the bundle. It's related to performance because it reduces the size of the bundle.
 
-- In a React Component method (eg. handleClick) can you __`return` a `setState`__? Why?
+- In a React Component method (eg. handleClick) can you `return` a `setState`? Why?
 
 > No, `setState` cannot be returned from a handler. It must be invoked directly or React won't schedule a re-render.
+
+- What's the use for `dangerouslySetInnerHTML`? Why is it dangerous?
+
+> It's used to set the HTML of an element, for example, when you want to render HTML from a CMS like a `<p>hello</p>` tag. It's dangerous because it can lead to XSS attacks since a user can insert malicious code by for example adding a `<script>` tag.
 
 - Why do we need to __build__ a React application? How does the build size affects the end user?
 
@@ -203,3 +207,6 @@ function outer() {
 
 - What's an __idempotent operation__? How would you use it? Why would you use it?
 > An idempotent operation is an operation that can be applied multiple times without changing the result beyond the initial application. E.g. you wanto to make a payment. You send the request to the server. The server processes the request and sends a response. If you send the same request again, the server will process the request and send the same response. The result is the same. This way if the client doesn't receive a response from the server it can retry the request without worrying about duplicate payments.
+
+- Which TCP protocols you know?
+> TCP stands for Transmission Control Protocol. It's a connection-oriented protocol. It's used to send data over the internet. It's used by HTTP, HTTPS WS (Chats), FTP(files), SMTP(emails), etc. For web development, the most common protocols are HTTP and HTTPS.
