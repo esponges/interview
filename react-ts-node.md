@@ -9,6 +9,14 @@ This is a set of questions and answers about React, TypeScript, and Node.js. It 
 
 - What is the difference between __state and props__?
 
+- What's the difference between the __app state__ and the __url state__?
+
+> The app state is the state of the application. It's the state of the whole application. The url state is the state of the url. It's the state of the url parameters. The url state is part of the app state.
+
+- What is the difference between the __query params__ and the __url params__?
+
+> The query params are the parameters that are passed in the url after the `?` symbol. The url params are the parameters that are passed in the url where the url accepts parameters.
+
 - What's a __global store__? What's the difference between it and a state? When you should use each one?
 
 - How would can you __update__ a value __without re-rendering__ the component? (Hint: use `useRef` hook)
