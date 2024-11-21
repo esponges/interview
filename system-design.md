@@ -201,7 +201,7 @@ Suitable for:
 Sharding is a type of horizontal scaling that involves breaking up the data set and distributing it across multiple machines. This approach is often used to address increasing data requirements by sharing the data set across multiple machines.
 
 Main types of sharding:
-- Hash-based sharding - uses a hash function to determine which machine should store a given piece of data. This approach is often used to distribute data evenly across multiple machines but it's not good for sepparating data that is related to each other.
+- Hash-based sharding - uses a hash function to determine which machine should store a given piece of data. This approach is often used to distribute data evenly across multiple machines but it's not good for separating data that is related to each other.
 - Range based sharding - uses a range of values to determine which machine should store a given piece of data. Eg. you could range-partition a database of customer data based on the customer ID, with each partition containing customers with IDs in a specific range. 
 - Directory sharding - Directory sharding uses a lookup table to match database information to the corresponding physical shard. This approach is not limited by range but could fail if the lookup table contains incorrect information.
 - Geographical sharding - uses the location of the user to determine which machine should store a given piece of data.
